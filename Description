@@ -1,0 +1,59 @@
+1. HOTEL
+Attributes: hotelID, name, address, phoneNumber, starRating, totalRooms
+Operations: getRoomAvailability()
+
+2. GUEST
+Attributes: guestID, firstName, lastName, email, phoneNumber, password, dateOfBirth, registrationDate
+Operations: makeReservation(), cancelBooking(), leaveReview()
+
+3. RESERVATION
+Attributes: bookingReference, checkInDate, checkOutDate, numberOfAdults, numberOfChildren, totalAmount, status, createdDate
+Operations: calculateTotal(), confirmBooking(), cancel()
+
+4. ROOM
+Attributes: roomNumber, floor, status, pricePerNight, maxOccupancy, hasBalcony
+Operations: checkAvailability(), updateStatus(), calculatePrice()
+
+5. ROOM TYPE
+Attributes: roomTypeID, typeName, description, basePrice, bedConfiguration, maxGuests
+Operations: getRoomDetails()
+
+6. PAYMENT
+Attributes: paymentID, amount, paymentDate, paymentMethod, transactionReference, status, cardLast4Digits
+Operations: processPayment(), refundPayment()
+
+7. INVOICE
+Attributes: invoiceNumber, issueDate, totalAmount, taxAmount, isPaid
+Operations: generateInvoice()
+
+8. REVIEW
+Attributes: reviewID, rating, cleanlinessRating, comfortRating, comment, reviewDate, isVerified
+Operations: submitReview()
+
+9. AMENITY
+Attributes: amenityID, name, description, category
+Operations: getAmenityDetails()
+
+10. SPECIAL REQUEST
+Attributes: requestID, requestType, description, status, requestDate
+Operations: processRequest()
+
+11. CHECK-IN RECORD
+Attributes: checkInID, checkInDateTime, keyCardsIssued, idVerified, depositPaid
+Operations: recordCheckIn(), generateInvoice()
+
+12. STAFF (superclass)
+Attributes: staffID, firstName, lastName, email, phoneNumber, role, hireDate
+Operations: performDuty()
+
+13. RECEPTIONIST (inherits from Staff)
+Attributes: shiftTiming, deskNumber
+Operations: checkInGuest(), checkOutGuest(), assignRoom()
+
+14. HOUSEKEEPING STAFF (inherits from Staff)
+Attributes: assignedFloors, supervisorID
+Operations: updateRoomStatus(), reportMaintenance()
+
+15. MANAGER (inherits from Staff)
+Attributes: department, authorisationLevel
+Operations: generateReports(), viewAnalytics()
